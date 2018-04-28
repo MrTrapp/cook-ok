@@ -1,0 +1,41 @@
+.cookieMaster {
+	top: 0;
+	z-index: 1000;
+	font-size: 16px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	width: 100%;
+	display: block;
+    margin-bottom: 30px;
+}
+
+.cookieMaster a {
+	color: whitesmoke;
+	text-decoration: underline;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+
+.cookieMaster a:hover {
+	color: white;
+	text-decoration: underline;
+}
+input.cookiebutton,
+a.cookiebutton {
+	color: white;
+	text-decoration: none;
+	background-color: #ff6b00;
+	padding: 6px;
+	text-align: center;
+	border-style: none;
+	width: 40px !important;
+	height: 30px !important;
+}
+input.cookiebutton:hover,
+a.cookiebutton:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #d70000;
+}
