@@ -2,11 +2,20 @@
 // Infos
 // https://www.php-einfach.de/php-tutorial/php-sessions/#Ueberpruefen_ob_Session-Variable_registriert_ist 
 // http://php.net/manual/de/function.setcookie.php
-	
-// Info Text mit Button über Cookie 
+
+$info = '';
+$style = '';
+$PHP_SELF = '';
+$readClosed = '';
+
 // !!! Nicht vergessen den Link zur Datenschutzerklährung anpassen. !!! \\\
+$pfad = '/'; // '.$PHP_SELF.'
+$pfadRex4 = 'index.php?article_id=1'; // " . $_SERVER[".$PHP_SELF."] . "
+$pfadRex5 = rex_getUrl(1); // .rex::getServer().$PHP_SELF.'
+
+// Info Text mit Button über Cookie 
 $info = '<form action="'.$PHP_SELF.'" method="post">
-<div class="cookieMaster">Diese Website verwendet Cookies. Durch die fortgesetzte Nutzung stimmen Sie dem Einsatz von Cookies auf unserer Websites zu.  <a href="index.php?article_id=1">Weitere Informationen</a> <input type="submit" name="read_and_close" class="cookiebutton" value="OK" />
+<div class="cookieMaster">Diese Website verwendet Cookies. Durch die fortgesetzte Nutzung stimmen Sie dem Einsatz von Cookies auf unserer Websites zu.  <a href="'.$pfadRex5.'">Weitere Informationen</a> <input type="submit" name="read_and_close" class="cookiebutton" value="OK" />
 </div>
 </form>';
 
@@ -24,7 +33,9 @@ $style = '<style>
 
 
 // Wenn der Button OK geklickt worden ist:
-$readClosed = $_POST["read_and_close"];
+// $readClosed = $_POST["read_and_close"];
+$readClosed = isset($_POST["read_and_close"]);
+
 
 if ($readClosed == 'OK') {
 	// Setzen des Cookies => cookies-ok 
